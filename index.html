@@ -1,0 +1,61 @@
+<!DOCTYPE html public "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <title>A cordial invitation</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" type="text/css" href="pagetheme.css">
+
+  </head>
+  <body>
+    <audio id="toplay" loop>
+      <source src = "assets/sadjazz.mp3">
+    </audio>
+    <div id='content' class='textbg'>
+
+      <div class = 'title-div'>
+        <p class='centered title-text'>You are cordially<br>invited</p>
+      </div>
+
+      <div id='tostart' class='centered' style='display:inline-block;'>
+        <p class='blinktext'>- Click to open -</p>
+      </div>
+
+      <div id='showonclick' class='description' style='display:none'>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec orci augue, feugiat eu augue ac, venenatis cursus tellus. Donec porta ante at erat congue tempor. Sed at mollis nisi. Quisque vehicula luctus dignissim. Nullam non diam gravida, porttitor nunc et, laoreet metus. Fusce in metus dui. Curabitur et purus porttitor, sollicitudin ligula id, eleifend ex. Integer efficitur arcu a arcu fringilla, ac viverra purus tincidunt. <strong>Quisque fringilla semper aliquet.</strong> Cras lobortis arcu dolor, eget ornare augue rutrum non.
+        </p>
+        <p>
+          We hope to see you on <strong>October 29, 2022.</strong>
+        </p>
+        <p>
+          <strong>Will you join the hunt?</strong>
+        </p>
+        <!-- <img src='assets/image_example.jpg' class='fit-in'> -->
+        <p class = 'centered blinktext'>
+          <a href='https://google.com'>Respondez-vous s'il vous plait</a>
+        </p>
+
+      </div>
+
+    </div>
+
+    <script>
+      // Handle autoplay at start
+      function musicPlay() {
+        var start_div = document.getElementById('tostart');
+        var description_div = document.getElementById('showonclick');
+        start_div.style.display = 'none';
+        description_div.style.display = 'inline-block';
+        document.getElementById("toplay").play();
+        document.removeEventListener('click', musicPlay);
+      }
+      document.addEventListener('click', musicPlay);
+    </script>
+
+  </body>
+</html>
