@@ -47,12 +47,13 @@ body {
 }
 
 .fit-in {
-  max-width: 560px;
+  width: 100%;
   object-fit: contain;
 }
 
 .description {
   padding: 20px;
+  font-size: 20px;
 }
 
 .centered {
