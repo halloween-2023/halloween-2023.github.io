@@ -2,7 +2,7 @@
    "http://www.w3.org/TR/html4/strict.dtd">
 <html>
   <head>
-    <title>A cordial invitation</title>
+    <title>A message from Cogsworth</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -12,39 +12,35 @@
 
   </head>
   <body>
-    <audio id="toplay" loop>
-      <source src = "assets/sadjazz.mp3">
+    <audio id="toplay">
+      <source src="assets/ai_waltz.mp3">
     </audio>
-    <div id='content' class='textbg'>
 
-      <div class = 'title-div'>
-        <p class='centered title-text'>You are cordially<br>invited</p>
-      </div>
+    <div class='textbg'>
 
-      <div id='tostart' class='centered' style='display:inline-block;'>
-        <p class='blinktext' style='font-size:25px;'>- Click to open -</p>
+      <p class='chat-bubble xl'>A message awaits from <strong>Cogsworth</strong> AE Assistant.</p>
+
+      <div id='tostart'>
+        <p class='response blinktext centered xl'>&gt; Open</p>
       </div>
 
       <div id='showonclick' class='description' style='display:none'>
-        <p class='centered'>
-          You are cordially invited to a Halloween party on the evening of October 29th.
+        <p id='showp1' class='chat-bubble'>
+          Dear Esteemed Guest,<br/><br/>
+          Please allow me to introduce myself: I am <strong>Cogsworth</strong>, your humble and ever-attentive AE steward. I humbly extend an invitation to a Halloween soirée of great grandeur, to transpire on the evening of <strong>October 29th</strong>, 1903.
         </p>
-        <p class='centered'>
-          However, we regret to inform you that <strong style='color:#990000;'>a murder has occurred.</strong>
+        <p id='showp2' class='chat-bubble'>
+          The venue for this affair shall be none other than the resplendent Capitol Hill "smart mansion," equipped with the latest in <strong>Analytical Engine (AE)</strong> Assistant technology.
         </p>
-        <img src='assets/crime_scene_cropped.jpg' class='fit-in'>
-        <p>
-          You will need to make your way through the <strong>Library</strong>, <strong>Dining Room</strong>, <strong>Hall</strong>, <strong>Billiard Room</strong>, <strong>Kitchen</strong>, <strong>Conservatory</strong>, <strong>Study</strong>, and <strong>Ballroom</strong> to gather clues about the crime. Was it <strong>Colonel Mustard</strong> with the <strong>Rope</strong>? <strong>Mrs. Peacock</strong> with the <strong>Candlestick</strong>?
+        <p id='showp3' class='chat-bubble'>
+          Under my watchful eye, you shall experience a night of <strong>unparalleled enchantment and wonder</strong>. Party games in every room, a harmonious serenade of clinking gears, and free-flowing libations will all be yours to enjoy. 
         </p>
-        <img src='assets/bloody_footprints.png' class='fit-in'>
-        <p>
-          At 11 PM, the entrance to the <strong>Cellar</strong> will open, but only for those who have cracked the case. Proceed down the steps to toast your success&mdash;if you dare.
+        <p id='showp4' class='chat-bubble'>
+          Please indulge your creative inclinations and attire yourself in any costume of your choosing. I eagerly await your <strong>RSVP</strong>, anticipating the pleasure of your company at what will certainly be a night to remember.
         </p>
-        <p class='centered'>
-          <strong>Will you help us catch the killer?</strong>
-        </p>
-        <p class = 'centered blinktext' style='font-size:30px;'>
-          <a href='http://evite.me/yYgbCehrAT'>Répondez s'il vous plaît</a>
+        <p id='rsvp' 
+        class = 'response blinktext centered xl'>
+          <a href='http://evite.me/yYgbCehrAT'>&gt; RSVP</a>
         </p>
 
       </div>
