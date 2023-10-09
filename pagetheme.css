@@ -1,9 +1,10 @@
+
 html, body {
   height: 100%;
 }
 
 body {
-  background-image: url(assets/blue_damask.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url(assets/blue_damask.jpg);
   background-color: #203141;
   color: #66ff66;
   font-family:'Courier New', Courier, monospace;
@@ -19,7 +20,7 @@ strong {
 }
 
 .textbg {
-  max-width: 600px;
+  max-width: 650px;
   min-height: 100%;
   padding: 1px 0;
   margin: 0px auto;
@@ -38,18 +39,10 @@ strong {
   font-weight: 150%;
 }
 
-<!-- For mobile display -->
-@media only screen and (min-device-width : 100px) and (max-device-width : 480px) and (orientation:portrait) {
-  #content {
-    width:95%;
-    margin: auto;
-  }
-}
-
-.title-text{
-  font-size: 60px;
-  padding: 40px 0 0;
-  margin-bottom:0px;
+.typewriter-active::after {
+  color: white;
+  content: "|";
+  animation: blinker 1.29s linear infinite alternate;
 }
 
 .fit-in {
@@ -79,6 +72,14 @@ strong {
 
 @keyframes blinker {
   50% {
-    opacity: 0.5;
+    opacity: 0.3;
+  }
+}
+
+<!-- For mobile display -->
+@media only screen and (min-device-width : 100px) and (max-device-width : 480px) and (orientation:portrait) {
+  #content {
+    width:95%;
+    margin: auto;
   }
 }

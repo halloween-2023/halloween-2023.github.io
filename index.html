@@ -27,7 +27,7 @@
       <div id='showonclick' class='description' style='display:none'>
         <p id='showp1' class='chat-bubble'>
           Dear Esteemed Guest,<br/><br/>
-          Please allow me to introduce myself: I am <strong>Cogsworth</strong>, your humble and ever-attentive AE steward. I humbly extend an invitation to a Halloween soirée of great grandeur, to transpire on the evening of <strong>October 29th</strong>, 1903.
+          Please allow me to introduce myself: I am <strong>Cogsworth</strong>, your humble and ever-attentive AE steward. I humbly extend an invitation to a Halloween soirée of great grandeur, to transpire on the evening of <strong>October 28th</strong>, 1903.
         </p>
         <p id='showp2' class='chat-bubble'>
           The venue for this affair shall be none other than the resplendent Capitol Hill "smart mansion," equipped with the latest in <strong>Analytical Engine (AE)</strong> Assistant technology.
@@ -38,9 +38,8 @@
         <p id='showp4' class='chat-bubble'>
           Please indulge your creative inclinations and attire yourself in any costume of your choosing. I eagerly await your <strong>RSVP</strong>, anticipating the pleasure of your company at what will certainly be a night to remember.
         </p>
-        <p id='rsvp' 
-        class = 'response blinktext centered xl'>
-          <a href='http://evite.me/yYgbCehrAT'>&gt; RSVP</a>
+        <p id='rsvp' class = 'response blinktext centered xl' style="margin-top:2px;">
+          <a href='http://evite.me/kEaZ5f5yUP'>&gt; RSVP</a>
         </p>
 
       </div>
@@ -48,16 +47,62 @@
     </div>
 
     <script>
+      // Sleep hack
+      const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
+
+      // Hide description elements to start
+      const desc_elements = ['showp1', 'showp2', 'showp3', 'showp4'];
+      for(ii in desc_elements){
+        document.getElementById(desc_elements[ii]).style.display = 'none';
+      }
+      document.getElementById('rsvp').style.display = 'none';
+
+      // Typewriter effect
+      const PUNCTUATION_PAUSE_MS = 200;
+      const DIV_END_PAUSE_MS = 1000;
+
       // Handle autoplay at start
-      function musicPlay() {
+      const autoPlay = async() => {
         var start_div = document.getElementById('tostart');
         var description_div = document.getElementById('showonclick');
         start_div.style.display = 'none';
         description_div.style.display = 'inline-block';
         document.getElementById("toplay").play();
-        document.removeEventListener('click', musicPlay);
-      }
-      document.addEventListener('click', musicPlay);
+
+        // This should only work once
+        document.removeEventListener('click', autoPlay);
+
+        // Run typewriter effect on all relevant paragraphs
+        for(ii in desc_elements) {
+          var desc_element = document.getElementById(desc_elements[ii]);
+          desc_element.style.display = '';
+          // Typewriter effect
+          var words_array = desc_element.innerHTML.split(' ');
+          var temp_html = '';
+          desc_element.innerHTML = '';
+          // Make the div visible and add the typewriter-active class
+          desc_element.classList.add('typewriter-active');
+          for(i = 0; i < words_array.length; i++){
+            var this_word = words_array[i];
+            temp_html += ' ' + this_word;
+            desc_element.innerHTML = temp_html;
+            // Flashy way to unhide the RSVP link
+            if(this_word.includes("RSVP")){
+              document.getElementById('rsvp').style.display = '';
+            }
+            // Various waiting periods
+            await sleep(30 * this_word.length * (0.5 * Math.random() + 0.75));
+            if(this_word.endsWith('.') || this_word.endsWith(',')){
+              await sleep(PUNCTUATION_PAUSE_MS);
+            }
+          }
+          // Wait one final time and then remove the typewriter-active class
+          await sleep(DIV_END_PAUSE_MS);
+          desc_element.classList.remove('typewriter-active');
+        }
+     }
+
+      document.addEventListener('click', autoPlay);
     </script>
 
   </body>
