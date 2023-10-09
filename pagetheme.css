@@ -76,10 +76,24 @@ strong {
   }
 }
 
-<!-- For mobile display -->
-@media only screen and (min-device-width : 100px) and (max-device-width : 480px) and (orientation:portrait) {
-  #content {
-    width:95%;
-    margin: auto;
+@media (pointer:none), (pointer:coarse) and (min-device-width: 801px) {
+  .textbg {
+    min-width: 700px;
+    font-size: 50px;
+  }
+}
+
+
+@media (pointer:none), (pointer:coarse) and (min-device-width: 601px) and (max-device-width: 800px) {
+  .textbg{
+    min-width: 80%;
+    font-size: 40px;
+  }
+}
+
+@media (pointer:none), (pointer:coarse) and (max-device-width: 600px) {
+  .textbg{
+    min-width: 80%;
+    font-size: 30px;
   }
 }
